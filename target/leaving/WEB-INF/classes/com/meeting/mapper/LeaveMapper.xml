@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.meeting.mapper.LeaveMapper" >
+<!--    <resultMap id="BaseResultMap" type="com.leave.model.Leave" >-->
+<!--        <id property="id" column="id" jdbcType="INTEGER" />-->
+<!--        <result property="uid" column="uid" jdbcType="INTEGER" />-->
+<!--        <result property="username" column="username" jdbcType="VARCHAR" />-->
+<!--        <result property="starttime" column="starttime" jdbcType="VARCHAR" />-->
+<!--        <result property="endtime" column="endtime" jdbcType="VARCHAR" />-->
+<!--        <result property="reason" column="reason" jdbcType="VARCHAR" />-->
+<!--        <result property="status" column="status" jdbcType="INTEGER" />-->
+<!--    </resultMap>-->
+
+
+<!--    <select id="queryAll" parameterType="int" resultMap="BaseResultMap">-->
+<!--        select * from leavenote where uid = #{uid}-->
+<!--    </select>-->
+
+<!--    <insert id="addLeave" parameterType="map">-->
+<!--        insert into leavenote (uid,username,starttime,endtime,reason) values (#{uid},#{username},#{starttime},#{endtime},#{reason})-->
+<!--    </insert>-->
+
+<!--    <update id="checkLeave" parameterType="int">-->
+<!--        update leavenote set status = 1 where id = #{id}-->
+<!--    </update>-->
+
+<!--    <select id="showAll" parameterType="int" resultMap="BaseResultMap">-->
+<!--        select * from leavenote limit #{index},6-->
+<!--    </select>-->
+
+
+
+
+
+
+</mapper>
