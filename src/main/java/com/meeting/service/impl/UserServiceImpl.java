@@ -26,18 +26,18 @@ public class UserServiceImpl implements UserService {
     }
     //注册
     @Override
-    public int addUser(Map<String, Object> map) {
+    public Integer addUser(Map<String, Object> map) {
           return userMapper.addUser(map);
     }
 
     @Override
-    public int deleteUser(int uid) {
-        return userMapper.deleteUser(uid);
+    public int deleteUser(int id) {
+        return userMapper.deleteUser(id);
     }
 
     @Override
-    public List<User> queryAll(int index) {
-        return userMapper.queryAll(index);
+    public List<User> queryAll() {
+        return userMapper.queryAll();
     }
 
     @Override
@@ -52,8 +52,8 @@ public class UserServiceImpl implements UserService {
 
     //查询
     @Override
-    public User query(int uid) {
-        return userMapper.query(uid);
+    public User query(int id) {
+        return userMapper.query(id);
     }
 
 

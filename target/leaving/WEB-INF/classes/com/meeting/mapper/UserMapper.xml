@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.meeting.mapper.UserMapper" >
-<!--    <resultMap id="BaseResultMap" type="com.leave.model.User" >-->
-<!--        <id property="uid" column="uid" jdbcType="INTEGER" />-->
-<!--        <result property="username" column="username" jdbcType="VARCHAR" />-->
-<!--        <result property="password" column="password" jdbcType="VARCHAR" />-->
-<!--        <result property="sex" column="sex" jdbcType="VARCHAR" />-->
-<!--        <result property="department" column="department" jdbcType="VARCHAR" />-->
-<!--        <result property="phone" column="phone" jdbcType="VARCHAR" />-->
-<!--    </resultMap>-->
+    <resultMap id="BaseResultMap" type="com.meeting.model.User" >
+        <id property="id" column="id" jdbcType="INTEGER" />
+        <result property="username" column="username" jdbcType="VARCHAR" />
+        <result property="password" column="password" jdbcType="VARCHAR" />
+        <result property="phone" column="phone" jdbcType="VARCHAR" />
+        <result property="department_id" column="department_id" jdbcType="INTEGER" />
+        <result property="position_id" column="position_id" jdbcType="INTEGER" />
+    </resultMap>
 
 
-<!--    <select id="queryUser" parameterType="map" resultType="int">-->
-<!--        select uid from user where username = #{username} and password = #{password}-->
-<!--    </select>-->
+    <select id="queryUser" parameterType="map" resultType="int">-->
+            select uid from user where username = #{username} and password = #{password}
+    </select>
 
 
-<!--    <select id="query" parameterType="int" resultMap="BaseResultMap">-->
-<!--        select * from user where uid = #{uid}-->
-<!--    </select>-->
+    <select id="query" parameterType="int" resultMap="BaseResultMap">
+        select * from user where id = #{id}
+    </select>
 
 
-<!--    <insert id="addUser" parameterType="map"  keyProperty="id">-->
-<!--    insert into user (uid,username,password,sex,department,phone) values (#{uid},#{username},#{password},#{sex},#{department},#{phone})-->
-<!--    </insert>-->
+    <insert id="addUser">
+    insert into user (username,password,phone,department_id,position_id) values (#{username},#{password},#{phone},#{department_id},#{position_id})
+    </insert>
 
-<!--    <delete id="deleteUser" parameterType="int">-->
-<!--        delete from user where uid = #{uid}-->
-<!--    </delete>-->
-<!--    <select id="search" parameterType="String" resultMap="BaseResultMap">-->
-<!--        select * from user where username like  CONCAT('%',CONCAT(#{chara,jdbcType=VARCHAR},'%'))-->
-<!--    </select>-->
-<!--    <select id="queryAll" resultMap="BaseResultMap">-->
-<!--        select * from user limit #{index},8-->
-<!--    </select>-->
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
+    <select id="search" parameterType="String" resultMap="BaseResultMap">
+        select * from user where username like  CONCAT('%',CONCAT(#{chara,jdbcType=VARCHAR},'%'))
+    </select>
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from user
+    </select>
 
-<!--    <update id="update" parameterType="map" keyProperty="uid">-->
-<!--        update user set username = #{username},department = #{department},phone = #{phone} where uid = #{uid}-->
-<!--    </update>-->
+    <update id="update" parameterType="map" keyProperty="id">
+        update user set username = #{username},phone = #{phone},department_id = #{department_id},position_id = #{position_id} where id = #{id}
+    </update>
 
 
 

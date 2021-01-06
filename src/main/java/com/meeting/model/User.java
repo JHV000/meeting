@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String uid;
+    private Integer id;
     private String username;
     private String password;
-    private String sex;
     private String phone;
-    private String department;
+    private Integer department_id;
+    private Integer position_id;
 
-    public String getUid() {
-        return uid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -35,14 +35,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -51,23 +43,31 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public String getDepartment() {
-        return department;
+    public Integer getDepartment_id() {
+        return department_id;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setDepartment_id(Integer department_id) {
+        this.department_id = department_id;
+    }
+
+    public Integer getPosition_id() {
+        return position_id;
+    }
+
+    public void setPosition_id(Integer position_id) {
+        this.position_id = position_id;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "uid='" + uid + '\'' +
+                "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", sex=" + sex +
                 ", phone='" + phone + '\'' +
-                ", department='" + department + '\'' +
+                ", department_id='" + department_id + '\'' +
+                ", position_id='" + position_id + '\'' +
                 '}';
     }
 }
