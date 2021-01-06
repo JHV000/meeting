@@ -1,33 +1,19 @@
 package com.meeting.model;
 
 public class Leave {
-    private int uid;
+    private int user_id;
     private int id;
     private String username;
-    private String starttime;
-    private String endtime;
+    private String start_time;
+    private String end_time;
     private String reason;
-    private int status;
 
-    @Override
-    public String toString() {
-        return "Leave{" +
-                "uid=" + uid +
-                ", id=" + id +
-                ", username='" + username + '\'' +
-                ", starttime='" + starttime + '\'' +
-                ", endtime='" + endtime + '\'' +
-                ", reason='" + reason + '\'' +
-                ", status=" + status +
-                '}';
+    public int getUser_id() {
+        return user_id;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     public int getId() {
@@ -38,28 +24,28 @@ public class Leave {
         this.id = id;
     }
 
-    public int getUid() {
-        return uid;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getStarttime() {
-        return starttime;
+    public String getStart_time() {
+        return start_time;
     }
 
-    public void setStarttime(String starttime) {
-        this.starttime = starttime;
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
     }
 
-    public String getEndtime() {
-        return endtime;
+    public String getEnd_time() {
+        return end_time;
     }
 
-    public void setEndtime(String endtime) {
-        this.endtime = endtime;
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
     }
 
     public String getReason() {
@@ -70,12 +56,25 @@ public class Leave {
         this.reason = reason;
     }
 
-    public int getStatus() {
-        return status;
+    public String getChecker() {
+        return checker;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setChecker(String checker) {
+        this.checker = checker;
     }
+
+    public String getCreate_at() {
+        return create_at;
+    }
+
+    public void setCreate_at(String create_at) {
+        this.create_at = create_at;
+    }
+
+    private String checker;
+    private String create_at;
+
+
 
 }

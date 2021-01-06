@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.meeting.mapper.DepartmentMapper">
-    <select id="getDepById" resultType="com.meeting.model">
+    <select id="getDepById" resultMap="com.meeting.model">
     select * from department where  departmentid=#{id};
 </select>
-    <select id="getAllDeps" resultType="com.meeting.model.Department">
+    <select id="getAllDeps" resultMap="com.meeting.model.Department">
         select * from department;
     </select>
     <insert id="adddepartment" parameterType="java.lang.String">
         insert into department (departmentname) values (#{departmentname});
     </insert>
-    <select id="getDepByName" resultType="com.meeting.model.Department">
+    <select id="getDepByName" resultMap="com.meeting.model.Department">
         select * from department where departmentname=#{departmentname};
     </select>
     <delete id="deletedep">
