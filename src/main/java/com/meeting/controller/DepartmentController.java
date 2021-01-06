@@ -5,25 +5,24 @@ import com.meeting.model.Department;
 import com.meeting.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/departments")
 public class DepartmentController {
     @Autowired
     DepartmentService departmentService;
 
-    @RequestMapping("/departments")
+    @RequestMapping("/getalldeps")
     public @ResponseBody
     List<Department> departments() {
 
         return departmentService.getAllDeps();
     }
 
-    @RequestMapping("/adddepartment")
+    @PostMapping("/adddep")
     public @ResponseBody
     Integer adddepartment(String departmentname) {
         return departmentService.adddepartment(departmentname);

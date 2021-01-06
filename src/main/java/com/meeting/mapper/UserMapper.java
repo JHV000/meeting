@@ -25,7 +25,7 @@ public interface UserMapper {
     int deleteUser(int uid);
 
     //查询所有用户
-    List<User> queryAll(int index);
+    List<User> queryAll();
 
     //模糊查找
     List<User> search(String chara);

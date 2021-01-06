@@ -44,7 +44,7 @@ public class UserController {
 
     }
 
-    @PostMapping(value = "/update")
+    @PostMapping(value = "/updateuser")
     public @ResponseBody
     int update(@RequestBody Map<String, Object> map) {
 
@@ -53,26 +53,25 @@ public class UserController {
     }
 
 
-    @GetMapping(value = "/query")
+    @GetMapping(value = "/selectuser")
     public @ResponseBody
-    User query(@RequestParam int uid) {
-        return userService.query(uid);
+    User query(@RequestParam int id) {
+        return userService.query(id);
     }
 
-    @GetMapping(value = "/delete")
+    @GetMapping(value = "/deleteuser")
     public @ResponseBody
-    int deleteUser(@RequestParam int uid) {
-        return userService.deleteUser(uid);
+    int deleteUser(@RequestParam int id) {
+        return userService.deleteUser(id);
     }
 
-    @GetMapping(value = "/queryAll")
+    @GetMapping(value = "/queryAlluser")
     public @ResponseBody
-    List<User> queryAll(int index) {
-        int page = (index - 1) * 8;
-        return userService.queryAll(page);
+    List<User> queryAll() {
+        return userService.queryAll();
     }
 
-    @GetMapping(value = "/search")
+    @GetMapping(value = "/searchuser")
     public @ResponseBody
     List<User> search(@RequestParam String chara) {
         return userService.search(chara);
