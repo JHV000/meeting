@@ -24,13 +24,12 @@
     </context:component-scan>
 
     <!-- 1. 数据源 -->
-    <!-- 读取db.properties文件. 读取到数据库信息 -->
+    <!-- 读取jdbc.properties文件. 读取到数据库信息 -->
     <context:property-placeholder location="classpath:db.properties"/>
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="${jdbc.driver}"/>
-        <property name="url" value="${jdbc.url}"/>
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
         <property name="username" value="${jdbc.username}"/>
         <property name="password" value="${jdbc.password}"/>
+        <property name="url" value="${jdbc.url}"/>
     </bean>
 
     <!-- 2.  创建sqlSessionFactory ==> mybatis核心配置文件的读取 -->
