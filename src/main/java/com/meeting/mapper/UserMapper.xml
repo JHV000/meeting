@@ -11,8 +11,8 @@
     </resultMap>
 
 
-    <select id="queryUser" parameterType="map" resultType="int">
-            select uid from user where username = #{username} and password = #{password}
+    <select id="queryUser" parameterType="map" resultMap="BaseResultMap">
+            select id from user where username = #{username} and password = #{password}
     </select>
 
 

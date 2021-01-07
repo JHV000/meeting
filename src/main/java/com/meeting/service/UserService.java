@@ -16,11 +16,11 @@ public interface UserService {
     //登录
     int queryUser(Map<String, Object> map);
     //查询
-    User query(int uid);
+    User query(int id);
     //注册
     Integer addUser(Map<String, Object> map);
     //删除
-    int deleteUser(int uid);
+    int deleteUser(int id);
     //查询所有用户
     List<User> queryAll();
     //模糊查找

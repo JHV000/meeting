@@ -17,7 +17,7 @@ public interface UserMapper {
     int queryUser(Map<String, Object> map);
 
     //根据姓名查询
-    User query(int uid);
+    User query(int id);
     //添加新用户，注册
     int addUser(Map<String, Object> map);
 

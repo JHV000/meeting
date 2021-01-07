@@ -3,6 +3,7 @@ package com.meeting.controller;
 import com.meeting.model.User;
 import com.meeting.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,8 +14,8 @@ import java.util.Map;
  * 接受前端传来的参数，进行业务操作
  * 返回一个路径或数据表
  */
-@RestController
-@RequestMapping(value = "/user")
+@Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -36,15 +37,14 @@ public class UserController {
     }
 
 
-    @PostMapping(value = "/addUser")
+    @PostMapping("/adduser")
     public @ResponseBody
     int addUser(@RequestBody Map<String, Object> map) {
-        int flag = userService.addUser(map);
-        return flag;
+        return userService.addUser(map);
 
     }
 
-    @PostMapping(value = "/updateuser")
+    @PostMapping("/updateuser")
     public @ResponseBody
     int update(@RequestBody Map<String, Object> map) {
 
@@ -53,25 +53,25 @@ public class UserController {
     }
 
 
-    @GetMapping(value = "/selectuser")
+    @GetMapping("/selectuser")
     public @ResponseBody
     User query(@RequestParam int id) {
         return userService.query(id);
     }
 
-    @GetMapping(value = "/deleteuser")
+    @GetMapping("/deleteuser")
     public @ResponseBody
     int deleteUser(@RequestParam int id) {
         return userService.deleteUser(id);
     }
 
-    @GetMapping(value = "/queryAlluser")
+    @GetMapping("/queryAlluser")
     public @ResponseBody
     List<User> queryAll() {
         return userService.queryAll();
     }
 
-    @GetMapping(value = "/searchuser")
+    @GetMapping("/searchuser")
     public @ResponseBody
     List<User> search(@RequestParam String chara) {
         return userService.search(chara);
