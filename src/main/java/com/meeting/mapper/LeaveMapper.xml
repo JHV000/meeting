@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.meeting.mapper.LeaveMapper" >
-<!--    <resultMap id="BaseResultMap" type="com.leave.model.Leave" >-->
-<!--        <id property="id" column="id" jdbcType="INTEGER" />-->
-<!--        <result property="uid" column="uid" jdbcType="INTEGER" />-->
-<!--        <result property="username" column="username" jdbcType="VARCHAR" />-->
-<!--        <result property="starttime" column="starttime" jdbcType="VARCHAR" />-->
-<!--        <result property="endtime" column="endtime" jdbcType="VARCHAR" />-->
-<!--        <result property="reason" column="reason" jdbcType="VARCHAR" />-->
-<!--        <result property="status" column="status" jdbcType="INTEGER" />-->
-<!--    </resultMap>-->
+    <resultMap id="BaseResultMap" type="com.meeting.model.Leave" >
+        <id property="id" column="id" jdbcType="INTEGER" />
+        <result property="user_id" column="user_id" jdbcType="INTEGER" />
+        <result property="start_time" column="start_time" jdbcType="VARCHAR" />
+        <result property="end_time" column="end_time" jdbcType="VARCHAR" />
+        <result property="reason" column="reason" jdbcType="VARCHAR" />
+        <result property="checker" column="checker" jdbcType="VARCHAR" />
+        <result property="create_at" column="create_at" jdbcType="VARCHAR" />
+        <result property="status" column="status" jdbcType="INTEGER" />
+    </resultMap>
 
 
-<!--    <select id="queryAll" parameterType="int" resultMap="BaseResultMap">-->
-<!--        select * from leavenote where uid = #{uid}-->
-<!--    </select>-->
+    <select id="queryAll" parameterType="int" resultMap="BaseResultMap">
+        select * from leavenote where user_id = #{user_id}
+    </select>
 
-<!--    <insert id="addLeave" parameterType="map">-->
-<!--        insert into leavenote (uid,username,starttime,endtime,reason) values (#{uid},#{username},#{starttime},#{endtime},#{reason})-->
-<!--    </insert>-->
+    <insert id="addLeave" parameterType="map">
+        insert into leavenote (user_id,start_time,end_time,reason) values (#{user_id},#{start_time},#{endtime},#{reason})
+    </insert>
 
-<!--    <update id="checkLeave" parameterType="int">-->
-<!--        update leavenote set status = 1 where id = #{id}-->
-<!--    </update>-->
+    <update id="checkLeave" parameterType="int">
+        update leavenote set status = 1 where id = #{id}
+    </update>
 
-<!--    <select id="showAll" parameterType="int" resultMap="BaseResultMap">-->
-<!--        select * from leavenote limit #{index},6-->
-<!--    </select>-->
+    <select id="showAll" parameterType="int" resultMap="BaseResultMap">
+        select * from leavenote limit #{index},6
+    </select>
 
 
 
