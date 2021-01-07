@@ -17,8 +17,8 @@ public class LeaveController {
 
     @GetMapping(value = "/queryAll")
     public @ResponseBody
-    List<Leave> queryAll(@RequestParam int uid) {
-        return leaveService.queryAll(uid);
+    List<Leave> queryAll(@RequestParam int user_id) {
+        return leaveService.queryAll(user_id);
     }
 
     @GetMapping(value = "/checkLeave")

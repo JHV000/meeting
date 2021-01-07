@@ -14,12 +14,12 @@ public class LeaveServiceImpl implements LeaveService {
     @Autowired
     private LeaveMapper leaveMapper;
 
-    //登录
+
 
     @Override
-    public List<Leave> queryAll(int uid) {
+    public List<Leave> queryAll(int user_id) {
 
-        return leaveMapper.queryAll(uid);
+        return leaveMapper.queryAll(user_id);
     }
 
     @Override
