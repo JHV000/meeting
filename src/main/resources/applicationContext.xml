@@ -37,6 +37,8 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <property name="mapperLocations" value="classpath:/com/meeting/mapper/*.xml"/>
+
+
     </bean>
 
     <!-- 3.扫描mybatis的mapper接口路径 -->
@@ -44,6 +46,7 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 会在提供的base包下寻找interface .根据interface的名字. 将首字母小写生成这个接口所对应的bean -->
+
         <property name="basePackage" value="com.meeting.mapper"/>
     </bean>
 
