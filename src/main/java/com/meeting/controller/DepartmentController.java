@@ -22,7 +22,7 @@ public class DepartmentController {
         return departmentService.getAllDeps();
     }
 
-    @PostMapping("/adddep")
+    @RequestMapping("/adddep")
     public @ResponseBody
     Integer adddepartment(String departmentname) {
         return departmentService.adddepartment(departmentname);

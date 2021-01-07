@@ -21,8 +21,8 @@
     </select>
 
 
-    <insert id="addUser">
-    insert into user (username,password,phone,department_id,position_id) values (#{username},#{password},#{phone},#{department_id},#{position_id})
+    <insert id="addUser" parameterType="map"  keyProperty="id">
+    insert into user (id,username,password,phone,department_id,position_id) values (#{id},#{username},#{password},#{phone},#{department_id},#{position_id})
     </insert>
 
     <delete id="deleteUser" parameterType="int">
