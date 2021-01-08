@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.meeting.mapper.MeetingMapper">
+<!--    <resultMap id="ResultMap" type="com.meeting.model.Meeting" >-->
+<!--        <id property="id" column="id" jdbcType="INTEGER" />-->
+<!--        <result property="room_id" column="room_id" jdbcType="INTEGER" />-->
+<!--        <result property="name" column="name" jdbcType="VARCHAR" />-->
+<!--        <result property="start_time" column="start_time" jdbcType="VARCHAR" />-->
+<!--        <result property="end_time" column="end_time" jdbcType="VARCHAR" />-->
+<!--        <result property="count" column="count" jdbcType="INTEGER" />-->
+<!--        <result property="reason" column="reason" jdbcType="VARCHAR" />-->
+<!--        <result property="applicant" column="applicant" jdbcType="VARCHAR" />-->
+<!--        <result property="status" column="status" jdbcType="INTEGER" />-->
+<!--    </resultMap>-->
+    <select id="queryAll" resultType="java.util.Map">
+        select * from meeting
+    </select>
+    <insert id="addMeeting" parameterType="java.util.Map">
+        insert into meeting (room_id,name,start_time,end_time,count,reason,applicant,status) values (#{room_id},#{name},#{start_time},#{end_time},#{count},#{reason},#{applicant},#{status})
+    </insert>
+    <select id="queryAllById" parameterType="int" resultType="java.util.Map">
+      select * from meeting where meeting.id in (select meeting_id from meetingpeople where user_id =#{user_id})
+    </select>
+</mapper>
