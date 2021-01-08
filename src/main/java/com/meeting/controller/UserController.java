@@ -25,14 +25,14 @@ public class UserController {
     public @ResponseBody
     int queryUser(@RequestBody Map<String, Object> map) {
 
-        int flag = userService.queryUser(map);
-        if (flag == 1) {
-            System.out.println("登录成功");
-
-        } else {
-            System.out.println("登录失败");
-        }
-        return flag;
+//        int flag = userService.queryUser(map);
+//        if (flag == 1) {
+//            System.out.println("登录成功");
+//
+//        } else {
+//            System.out.println("登录失败");
+//        }
+        return userService.queryUser(map);
 
     }
 

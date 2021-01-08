@@ -10,5 +10,5 @@ public interface MeetingService {
     List<Meeting> queryAll();
     List<Meeting> queryAllById(int user_id);
     int addMeeting(Map<String, Object> map);
-    int checkMeeting(int id);
+    int checkMeeting(int id,int status);
 }

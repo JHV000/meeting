@@ -31,4 +31,8 @@ public class MeetingController {
     List<Meeting> queryAllById(int user_id){
         return meetingService.queryAllById(user_id);
     }
+    @GetMapping("/checkmeeting")
+    public @ResponseBody int checkmeeting(@RequestParam int id,int status){
+        return meetingService.checkMeeting(id,status);
+    }
 }

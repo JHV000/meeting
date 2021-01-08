@@ -29,7 +29,7 @@ public class MeetingServiceImpl implements MeetingService {
     }
 
     @Override
-    public int checkMeeting(int id) {
-        return meetingMapper.checkMeeting(id);
+    public int checkMeeting(int id,int status) {
+        return meetingMapper.checkMeeting(id,status);
     }
 }
