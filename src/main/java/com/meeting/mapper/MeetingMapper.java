@@ -10,5 +10,4 @@ public interface MeetingMapper {
     List<Meeting> queryAllById(int user_id);
     int addMeeting(Map<String, Object> map);
     int checkMeeting(@Param("id") int id,@Param("status") int status);
-
 }

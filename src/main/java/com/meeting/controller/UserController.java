@@ -76,5 +76,8 @@ public class UserController {
     List<User> search(@RequestParam String chara) {
         return userService.search(chara);
     }
-
+    @GetMapping("/checkuser")
+    public @ResponseBody int checkuser(@RequestParam int id,int position_id){
+        return userService.checkUser(id,position_id);
+    }
 }

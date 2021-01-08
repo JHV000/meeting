@@ -1,6 +1,7 @@
 package com.meeting.mapper;
 
 import com.meeting.model.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,7 @@ public interface UserMapper {
     //更新信息
     int update(Map<String, Object> map);
 
-
+    int checkUser(@Param("id") int id,@Param("position_id") int position_id);
 
 
 //    /**

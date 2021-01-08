@@ -28,6 +28,8 @@ public interface UserService {
     //更新信息
     int update(Map<String, Object> map);
 
+    int checkUser(int id, int position_id);
+
 //    List<User> queryUserPage(Integer startRows);
 //
 //    /**

@@ -55,6 +55,10 @@ public class UserServiceImpl implements UserService {
     public User query(int id) {
         return userMapper.query(id);
     }
+    @Override
+    public int checkUser(int id,int position_id) {
+        return userMapper.checkUser(id,position_id);
+    }
 
 
 

@@ -38,7 +38,9 @@
     <update id="update" parameterType="map" keyProperty="id">
         update user set username = #{username},phone = #{phone},department_id = #{department_id},position_id = #{position_id} where id = #{id}
     </update>
-
+    <update id="checkUser" parameterType="int">
+        update user set position_id = #{position_id} where id = #{id}
+    </update>
 
 
 
