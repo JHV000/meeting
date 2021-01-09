@@ -1,6 +1,7 @@
 package com.meeting.mapper;
 
 import com.meeting.model.Department;
+
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface DepartmentMapper {
     Department getDepByName(String departmentname);
     Integer deletedep(Integer departmentid);
     Integer updatedep(@Param("id") Integer id, @Param("name") String name);
+
+
 }

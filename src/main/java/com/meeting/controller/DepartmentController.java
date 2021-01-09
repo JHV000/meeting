@@ -2,7 +2,9 @@ package com.meeting.controller;
 
 
 import com.meeting.model.Department;
+
 import com.meeting.service.DepartmentService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import java.util.List;
 public class DepartmentController {
     @Autowired
     DepartmentService departmentService;
+
 
     @RequestMapping("/getalldeps")
     public @ResponseBody
@@ -35,14 +38,14 @@ public class DepartmentController {
     }
 
     @RequestMapping("/updatedep")
-
-    public @ResponseBody
-    String updatedep(Integer id, String name) {
+    @ResponseBody
+    public String updatedep(Integer id, String name) {
         Integer result = departmentService.updatedep(id, name);
         if (result == 1) {
             return "success";
         }
         return "error";
     }
+
 
 }
