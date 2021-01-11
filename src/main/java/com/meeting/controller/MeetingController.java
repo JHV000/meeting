@@ -2,7 +2,7 @@ package com.meeting.controller;
 import com.meeting.model.Meeting;
 import com.meeting.service.MeetingService;
 
-import org.json.JSONArray;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +14,7 @@ import java.util.Map;
 public class MeetingController {
 
     @Autowired
-    private MeetingService meetingService;
-
+    MeetingService meetingService;
     @GetMapping(value = "/queryAll")
     public @ResponseBody
     List<Meeting> queryAll() {

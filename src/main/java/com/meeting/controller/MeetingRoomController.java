@@ -20,9 +20,9 @@ public class MeetingRoomController {
 
         return meetingRoomService.getAllMr();
     }
-    @RequestMapping("/getroombyid")
-    public @ResponseBody MeetingRoom roomdetails(Integer id) {
-        return meetingRoomService.getMrById(id);
+    @RequestMapping("/getroombyname")
+    public @ResponseBody MeetingRoom roomdetails(String name) {
+        return meetingRoomService.getMrByName(name);
     }
     @PostMapping("/updateroom")
     public @ResponseBody Integer updateRoom(@RequestBody MeetingRoom meetingRoom) {
@@ -33,8 +33,12 @@ public class MeetingRoomController {
 //        return "addmeetingroom";
 //    }
 
-    @PostMapping("addroom")
+    @PostMapping("/addroom")
     public @ResponseBody Integer doAddMr(@RequestBody MeetingRoom meetingRoom) {
         return meetingRoomService.addMr(meetingRoom);
+    }
+    @RequestMapping("/deleteroom")
+    public @ResponseBody Integer deleteRoom(Integer id){
+        return meetingRoomService.deleteRoom(id);
     }
 }

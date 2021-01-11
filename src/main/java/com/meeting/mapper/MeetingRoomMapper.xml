@@ -12,8 +12,8 @@
     <select id="getAllMr" resultMap="BaseResultMap">
         select * from room;
     </select>
-    <select id="getMrById" resultMap="BaseResultMap">
-        select * from room where id=#{id};
+    <select id="getMrByName" resultMap="BaseResultMap">
+        select * from room where name like  CONCAT('%',CONCAT(#{name,jdbcType=VARCHAR},'%'))
     </select>
     <update id="updateRoom">
         update room set num = #{num},name=#{name},capacity=#{capacity},status=#{status} where id=#{id};
@@ -21,4 +21,7 @@
     <insert id="addMr" >
         insert into room (num,name,capacity,status) values (#{num},#{name},#{capacity},#{status});
     </insert>
+    <delete id="deleteRoom">
+        delete from room where id=#{id};
+    </delete>
 </mapper>
