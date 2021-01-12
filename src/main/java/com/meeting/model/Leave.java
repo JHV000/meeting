@@ -3,10 +3,8 @@ package com.meeting.model;
 public class Leave {
     private int id;
     private int user_id;
-    private String start_time;
-    private String end_time;
+    private int meeting_id;
     private String reason;
-    private String checker;
     private String create_at;
     private int status;
 
@@ -26,36 +24,12 @@ public class Leave {
         this.user_id = user_id;
     }
 
-    public String getStart_time() {
-        return start_time;
-    }
-
-    public void setStart_time(String start_time) {
-        this.start_time = start_time;
-    }
-
-    public String getEnd_time() {
-        return end_time;
-    }
-
-    public void setEnd_time(String end_time) {
-        this.end_time = end_time;
-    }
-
     public String getReason() {
         return reason;
     }
 
     public void setReason(String reason) {
         this.reason = reason;
-    }
-
-    public String getChecker() {
-        return checker;
-    }
-
-    public void setChecker(String checker) {
-        this.checker = checker;
     }
 
     public String getCreate_at() {
@@ -72,5 +46,13 @@ public class Leave {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public int getMeeting_id() {
+        return meeting_id;
+    }
+
+    public void setMeeting_id(int meeting_id) {
+        this.meeting_id = meeting_id;
     }
 }

@@ -17,9 +17,9 @@ public class LeaveServiceImpl implements LeaveService {
 
 
     @Override
-    public List<Leave> queryAll(int user_id) {
+    public List<Leave> queryAll(int id) {
 
-        return leaveMapper.queryAll(user_id);
+        return leaveMapper.queryAll(id);
     }
 
     @Override
@@ -28,13 +28,13 @@ public class LeaveServiceImpl implements LeaveService {
     }
 
     @Override
-    public int checkLeave(int id) {
-        return leaveMapper.checkLeave(id);
+    public int checkLeave(int id,int status) {
+        return leaveMapper.checkLeave(id,status);
     }
 
     @Override
-    public List<Leave> showAll(int index) {
-        return leaveMapper.showAll(index);
+    public List<Leave> showAll() {
+        return leaveMapper.showAll();
     }
 
 }

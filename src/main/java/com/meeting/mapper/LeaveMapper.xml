@@ -4,17 +4,15 @@
     <resultMap id="BaseResultMap" type="com.meeting.model.Leave" >
         <id property="id" column="id" jdbcType="INTEGER" />
         <result property="user_id" column="user_id" jdbcType="INTEGER" />
-        <result property="start_time" column="start_time" jdbcType="VARCHAR" />
-        <result property="end_time" column="end_time" jdbcType="VARCHAR" />
+        <result property="meeting_id" column="meeting_id" jdbcType="INTEGER" />
         <result property="reason" column="reason" jdbcType="VARCHAR" />
-        <result property="checker" column="checker" jdbcType="VARCHAR" />
         <result property="create_at" column="create_at" jdbcType="VARCHAR" />
         <result property="status" column="status" jdbcType="INTEGER" />
     </resultMap>
 
 
-    <select id="queryAll" parameterType="int" resultMap="BaseResultMap">
-        select * from leavenote where user_id = #{user_id}
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from leavenot where id=#{id};
     </select>
 
     <insert id="addLeave" parameterType="map">
@@ -22,11 +20,11 @@
     </insert>
 
     <update id="checkLeave" parameterType="int">
-        update leavenote set status = 1 where id = #{id}
+        update leavenote set status = #{status} where id = #{id}
     </update>
 
-    <select id="showAll" parameterType="int" resultMap="BaseResultMap">
-        select * from leavenote limit #{index},6
+    <select id="showAll" resultMap="BaseResultMap">
+        select * from leavenote
     </select>
 
 

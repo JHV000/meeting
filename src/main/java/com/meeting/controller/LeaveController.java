@@ -17,14 +17,14 @@ public class LeaveController {
 
     @GetMapping(value = "/queryAll")
     public @ResponseBody
-    List<Leave> queryAll(@RequestParam int user_id) {
-        return leaveService.queryAll(user_id);
+    List<Leave> queryAll(int id) {
+        return leaveService.queryAll(id);
     }
 
     @GetMapping(value = "/checkLeave")
     public @ResponseBody
-    int checkLeave(@RequestParam int id) {
-        return leaveService.checkLeave(id);
+    int checkLeave(@RequestParam int id,int status) {
+        return leaveService.checkLeave(id,status);
     }
 
     @PostMapping(value = "/addLeave")
@@ -35,8 +35,7 @@ public class LeaveController {
 
     @GetMapping(value = "/showAll")
     public @ResponseBody
-    List<Leave> showAll(@RequestParam int index) {
-        int page = (index-1)*6;
-        return leaveService.showAll(page);
+    List<Leave> showAll() {
+        return leaveService.showAll();
     }
 }
