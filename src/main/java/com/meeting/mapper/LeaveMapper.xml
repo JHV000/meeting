@@ -17,7 +17,7 @@
     </select>
 
     <insert id="addLeave" parameterType="map">
-        insert into leavenote (user_id,start_time,end_time,reason) values (#{user_id},#{start_time},#{endtime},#{reason})
+        insert into leavenote (user_id,meeting_id,reason,create_at,status) values (#{user_id},#{meeting_id},#{reason},#{new Date()},#{0})
     </insert>
 
     <update id="checkLeave" parameterType="int">
