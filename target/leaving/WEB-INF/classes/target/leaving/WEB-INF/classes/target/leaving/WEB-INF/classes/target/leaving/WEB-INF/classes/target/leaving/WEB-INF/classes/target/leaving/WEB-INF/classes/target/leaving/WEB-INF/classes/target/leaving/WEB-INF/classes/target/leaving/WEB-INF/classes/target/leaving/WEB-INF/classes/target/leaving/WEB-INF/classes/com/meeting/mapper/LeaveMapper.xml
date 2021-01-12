@@ -14,7 +14,7 @@
 
 
     <select id="queryAll" resultMap="BaseResultMap">
-        select * from leavenot;
+        select * from leavenot where id=#{id};
     </select>
 
     <insert id="addLeave" parameterType="map">
@@ -25,8 +25,8 @@
         update leavenote set status = 1 where id = #{id}
     </update>
 
-    <select id="showAll" parameterType="int" resultMap="BaseResultMap">
-        select * from leavenote limit #{index},6
+    <select id="showAll" resultMap="BaseResultMap">
+        select * from leavenote
     </select>
 
 

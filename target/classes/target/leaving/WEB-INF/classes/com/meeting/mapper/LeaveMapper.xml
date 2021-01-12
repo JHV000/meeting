@@ -11,7 +11,7 @@
     </resultMap>
 
 
-    <select id="queryAll" resultMap="BaseResultMap">
+    <select id="queryAll" resultMap="java.util.Map">
         select leavenote.id,`user`.username,meeting.`name`,leavenote.reason,create_at,leavenote.status from leavenote,user,meeting,meetingpeople
         where `user`.id = leavenote.user_id and meetingpeople.user_id = leavenote.user_id and meetingpeople.meeting_id = meeting.id and leavenote.user_id=#{user_id}
     </select>
@@ -24,7 +24,7 @@
         update leavenote set status = #{status} where id = #{id}
     </update>
 
-    <select id="showAll" resultMap="BaseResultMap">
+    <select id="showAll" resultMap="java.util.Map">
         select leavenote.id,`user`.username,meeting.`name`,leavenote.reason,create_at,leavenote.status from leavenote,user,meeting,meetingpeople
         where `user`.id = leavenote.user_id and meetingpeople.user_id = leavenote.user_id and meetingpeople.meeting_id = meeting.id
     </select>
