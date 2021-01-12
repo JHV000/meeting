@@ -15,7 +15,7 @@ public class MeetingRoomServiceImpl implements MeetingRoomService {
     public List<MeetingRoom> getAllMr() {
         return meetingRoomMapper.getAllMr();
     }
-    public MeetingRoom getMrByName(String name) {
+    public List<MeetingRoom> getMrByName(String name) {
         return meetingRoomMapper.getMrByName(name);
     }
     public Integer updateRoom(MeetingRoom meetingRoom) {

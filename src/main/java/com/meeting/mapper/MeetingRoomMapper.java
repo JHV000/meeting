@@ -6,7 +6,7 @@ import com.meeting.model.MeetingRoom;
 
 public interface MeetingRoomMapper {
     List<MeetingRoom> getAllMr();
-    MeetingRoom getMrByName(String name);
+    List<MeetingRoom> getMrByName(String name);
     Integer updateRoom(MeetingRoom meetingRoom);
 
     Integer addMr(MeetingRoom meetingRoom);

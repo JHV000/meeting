@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.meeting.mapper.PositionMapper">
+    <resultMap id="BaseResultMap" type="com.meeting.model.Position" >
+        <id property="id" column="id" jdbcType="INTEGER" />
+        <result property="name" column="name" jdbcType="VARCHAR" />
+        <result property="right" column="right" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="getAllPos" resultMap="BaseResultMap">
+        select * from position;
+    </select>
+    <insert id="addPosition">
+        insert into position (name,purview) values (#{name},#{purview})
+    </insert>
+    <update id="updatePosition">
+        update position set name=#{name},purview=#{purview} where id=#{id}
+    </update>
+    <delete id="deletePosition">
+    delete from position where id=#{id};
+    </delete>
+</mapper>

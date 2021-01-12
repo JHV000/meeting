@@ -21,7 +21,7 @@ public class MeetingRoomController {
         return meetingRoomService.getAllMr();
     }
     @RequestMapping("/getroombyname")
-    public @ResponseBody MeetingRoom roomdetails(String name) {
+    public @ResponseBody List<MeetingRoom> roomdetails(String name) {
         return meetingRoomService.getMrByName(name);
     }
     @PostMapping("/updateroom")

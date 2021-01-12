@@ -6,7 +6,6 @@
         <result property="user_id" column="user_id" jdbcType="INTEGER" />
         <result property="meeting_id" column="meeting_id" jdbcType="INTEGER" />
         <result property="reason" column="reason" jdbcType="VARCHAR" />
-        <result property="checker" column="checker" jdbcType="VARCHAR" />
         <result property="create_at" column="create_at" jdbcType="VARCHAR" />
         <result property="status" column="status" jdbcType="INTEGER" />
     </resultMap>
@@ -21,7 +20,7 @@
     </insert>
 
     <update id="checkLeave" parameterType="int">
-        update leavenote set status = 1 where id = #{id}
+        update leavenote set status = #{status} where id = #{id}
     </update>
 
     <select id="showAll" resultMap="BaseResultMap">

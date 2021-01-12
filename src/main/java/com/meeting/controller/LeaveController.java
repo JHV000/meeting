@@ -17,8 +17,8 @@ public class LeaveController {
 
     @GetMapping(value = "/queryAll")
     public @ResponseBody
-    List<Leave> queryAll(int id) {
-        return leaveService.queryAll(id);
+    List<Map> queryAll(int user_id) {
+        return leaveService.queryAll(user_id);
     }
 
     @GetMapping(value = "/checkLeave")
@@ -35,7 +35,7 @@ public class LeaveController {
 
     @GetMapping(value = "/showAll")
     public @ResponseBody
-    List<Leave> showAll() {
+    List<Map> showAll() {
         return leaveService.showAll();
     }
 }

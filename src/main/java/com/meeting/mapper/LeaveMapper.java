@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface LeaveMapper {
-    List<Leave> queryAll(int id);
+    List<Map> queryAll(int user_id);
     int checkLeave(@Param("id") int id,@Param("status") int status);
     int addLeave(Map<String, Object> map);
-    List<Leave> showAll();
+    List<Map> showAll();
 }
